@@ -2,7 +2,6 @@
 @use '../1-base/base-mixins'
 @use 'modules-mixins'
 
-
 .banner
     width: 30%
     height: 200px
@@ -11,6 +10,10 @@
     transition: .4s
     @include modules-mixins.center-bg
     background-size: 100%
+
+    @include base-mixins.mobile
+        width: 90%
+        margin: 1rem
 
     &:hover
         background-size: 120%
@@ -43,10 +46,6 @@
             color: variables.$light-color
             margin-left: .8rem
 
-
-
 @for $image from 1 through 3
     #banner-#{$image}
         background-image: url('../../img/banner-#{$image}.jpg')
-
-     
